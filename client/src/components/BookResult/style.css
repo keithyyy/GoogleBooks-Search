@@ -1,0 +1,45 @@
+.card {
+    margin-bottom: 2rem;
+}
+
+.card-title {
+    padding-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+
+.author {
+    margin-left: 10px;
+
+}
+
+.book-image {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    justify-content: center;
+}
+
+.summary {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 4px
+}
+
+.button-choices {
+    text-align: right;
+    margin-top: 2rem
+}
+
+.view-btn {
+    margin-bottom: 1.5rem
+}
+
+.save-btn {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem
+}
