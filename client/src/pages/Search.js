@@ -39,6 +39,11 @@ const Search = () => {
         })
     }
 
+    function saveBook(id) {
+        console.log(id)
+        const { volumeInfo } = result.filter(book => book.id === id)[0]
+    }
+
     return (
         <>
         <SearchBar onClick={handleSubmit} onChange={handleChange}/>
@@ -49,7 +54,8 @@ const Search = () => {
         {result.map(book => {
             console.log(book)
             return (
-                <BookResult 
+                <BookResult
+                onClick={() => saveBook(book.id)} 
                 key={book.volumeInfo.id}
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}

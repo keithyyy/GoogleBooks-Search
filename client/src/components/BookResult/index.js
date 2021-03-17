@@ -15,7 +15,7 @@ const BookResult = (props) => {
 
                 <div className="col-md-6 button-choices">
                     <button className="btn btn-primary view-btn">View</button>
-                    <button className="btn btn-secondary save-btn">Save</button>
+                    <button className="btn btn-secondary save-btn" onClick={props.onClick}>Save</button>
                 </div>
 
 
