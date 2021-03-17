@@ -35,10 +35,6 @@ const BookResult = (props) => {
                 </div>
             </div>
 
-            <div className="row">
-                
-            </div>
-
         </div>
     )
 }
