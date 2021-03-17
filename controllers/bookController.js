@@ -11,17 +11,13 @@ module.exports = {
     },
     create: function(req, res) {
         db.Book
-        .find({ googleID: req.body.bookID})
-        .then(data => {
-            if(data.length === 0) {
-                db.Book.create(req.body)
-                .then(result => res.json(result))
-            }
-        }).catch(err => res.status(422).json(err))
+        .create(req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err))
     },
     remove: function(req, res) {
         db.Book
-        .findOne({ googleID: req.params.id})
+        .findOne({ _id: req.params.id})
         .then(dbModel => {
             dbModel.remove()
         })

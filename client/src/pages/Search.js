@@ -13,17 +13,6 @@ const Search = () => {
     const [apiKey, setApiKey] = useState("AIzaSyApeATiH12wsGB3uPjN4fcEUacX-uKqVvI")
 
     
-    // function loadBooks() {
-    //     axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+apiKey+"&maxResults=5")
-    //     .then(data => {
-    //         setResult(data.data.items)
-    //     })
-    // }
-
-    // useEffect(() => {
-    //     loadBooks()
-    // }, [])
-    
     function handleChange(event) {
         const book = event.target.value
         setBook(book)
@@ -31,10 +20,8 @@ const Search = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+apiKey+"&maxResults=5")
         API.searchBook(book)
         .then(data => {
-            console.log(data.data.items)
             setResult(data.data.items)
         })
     }
@@ -42,6 +29,16 @@ const Search = () => {
     function saveBook(id) {
         console.log(id)
         const { volumeInfo } = result.filter(book => book.id === id)[0]
+
+        console.log(volumeInfo)
+
+        API.saveBook({
+            title: volumeInfo.title,
+            authors: volumeInfo.authors,
+            link: volumeInfo.infoLink,
+            image: volumeInfo.imageLinks.thumbnail,
+            description: volumeInfo.description
+        })
     }
 
     return (
