@@ -20,7 +20,7 @@ export default {
 
     // saving our book and its data
     saveBook: function(book) {
-        return axios.save("/api/books/"+book)
+        return axios.post("/api/books", book)
     },
 
     searchBook: function(query) {
