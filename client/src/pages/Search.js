@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import SearchBar from "../components/SearchBar"
 import BookResult from "../components/BookResult"
-import axios from 'axios';
 import API from '../utils/API'
 
 
@@ -49,7 +48,6 @@ const Search = () => {
         <h3>Results</h3>
 
         {result.map(book => {
-            console.log(book)
             return (
                 <BookResult
                 onClick={() => saveBook(book.id)} 

@@ -1,8 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 3001;
-const app = express();
 const routes = require("./routes");
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+
 
 
 // Define middleware here
@@ -22,7 +24,7 @@ app.use(routes);
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
-  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
+  { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false }
 );
 
 
