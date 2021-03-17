@@ -1,13 +1,16 @@
 import React from 'react'
 import './style.css'
 
-const BookResult = () => {
+const BookResult = (props) => {
+    
+    
+
     return (
-        <div className="card book-result">
+        <div className="card book-result" id={props.key}>
             <div className="row">
                 <div className="col-md-6">
-                    <div className="card-title">Harry Potter: Order of the Phoenix</div>
-                    <div className="author">Written by J.K Rowling</div>
+                    <div className="card-title">{props.title}</div>
+                    <div className="author">{props.author}</div>
                 </div>
 
                 <div className="col-md-6 button-choices">
@@ -24,11 +27,11 @@ const BookResult = () => {
 
             <div className="row mb-4">
                 <div className="col-md-4">
-                    <img className="book-image" src="http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"/>
+                    <img className="book-image" src={props.image}/>
                 </div>
                 <div className="col-md-8">
                     <p className="summary">Summary</p>
-                    <p className="description mx-3">Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature.</p>
+                    <p className="description mx-3">{props.description}</p>
                 </div>
             </div>
 
