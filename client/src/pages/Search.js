@@ -22,6 +22,7 @@ const Search = () => {
         API.searchBook(book)
         .then(data => {
             setResult(data.data.items)
+            console.log(data)
         })
     }
 
@@ -48,6 +49,7 @@ const Search = () => {
         <h3>Results</h3>
 
         {result.map(book => {
+            console.log(book)
             return (
                 <BookResult
                 onClick={() => saveBook(book.id)} 
@@ -55,7 +57,9 @@ const Search = () => {
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}
                 description={book.volumeInfo.description}
-                image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/150x200/5c666e/ced0f2&text=No+Image"}/>
+                image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/150x200/5c666e/ced0f2&text=No+Image"}
+                link={book.volumeInfo.infoLink}/>
+                
             )
         })}
         

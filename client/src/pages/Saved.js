@@ -46,7 +46,7 @@ const Saved = () => {
                                 </div>
                 
                                 <div className="col-md-6 button-choices">
-                                    <button className="btn btn-primary view-btn">View</button>
+                                    <a className="btn btn-primary view-btn" href={book.link} rel="noopener noreferrer" target="_blank" type="button">View</a>
                                     <button className="btn btn-secondary save-btn" onClick={() => deleteBook(book._id)}>Delete</button>
                                 </div>
                 
