@@ -10,11 +10,11 @@ const BookResult = (props) => {
             <div className="row">
                 <div className="col-md-6">
                     <div className="card-title">{props.title}</div>
-                    <div className="author">{props.author}</div>
+                    <div className="author">Written By: {props.author}</div>
                 </div>
 
                 <div className="col-md-6 button-choices">
-                    <button className="btn btn-primary view-btn">View</button>
+                    <a className="btn btn-primary view-btn" href={props.link} target="_blank">View</a>
                     <button className="btn btn-secondary save-btn" onClick={props.onClick}>Save</button>
                 </div>
 
